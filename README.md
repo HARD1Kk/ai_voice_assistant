@@ -24,22 +24,40 @@ Ai_voice_assistant/
 │       └── requirements.txt      # Python dependencies
 ├── frontend/                      # React frontend application
 │   ├── src/
-│   │   ├── App.jsx               # Main app component
-│   │   ├── HomePage.jsx          # Landing page
-│   │   ├── Chatbot.jsx           # Chat interface component
-│   │   ├── VoiceAssistant.jsx   # Voice assistant component
-│   │   └── *.css                 # Component styles
-│   ├── index.html                # HTML entry point
-│   ├── package.json              # Node.js dependencies
-│   └── vite.config.js            # Vite configuration
+│   │   ├── components/           # React components
+│   │   │   ├── assistant/        # Voice/chat assistant components
+│   │   │   │   └── UnifiedAssistant.jsx  # Unified voice & chat assistant
+│   │   │   ├── pages/           # Page components
+│   │   │   └── HomePage.jsx      # Landing page
+│   │   │   └── legacy/          # Legacy components (deprecated)
+│   │   │       ├── Chatbot.jsx  # Old chat interface
+│   │   │       └── VoiceAssistant.jsx  # Old voice assistant
+│   │   ├── services/            # API and external services
+│   │   │   ├── api.js           # Chat API and token fetching
+│   │   │   └── livekit.js       # LiveKit connection utilities
+│   │   ├── utils/               # Utilities and constants
+│   │   │   └── constants.js    # App constants and configuration
+│   │   ├── styles/              # CSS stylesheets
+│   │   │   ├── components/     # Component-specific styles
+│   │   │   │   └── UnifiedAssistant.css
+│   │   │   └── pages/          # Page-specific styles
+│   │   │       └── HomePage.css
+│   │   ├── App.jsx              # Main app component
+│   │   ├── main.jsx             # Application entry point
+│   │   └── index.css            # Global styles
+│   ├── index.html               # HTML entry point
+│   ├── package.json             # Node.js dependencies
+│   └── vite.config.js           # Vite configuration
 └── README.md                      # This file
 ```
 
 ## ✨ Features
 
+- **Unified Assistant**: Combined voice and chat interface in one component
 - **Real-time Voice Communication**: Powered by LiveKit for high-quality audio streaming
 - **Intelligent Chat Interface**: Text-based chatbot using Azure OpenAI
-- **Multi-modal Support**: Switch between voice and chat modes
+- **Multi-modal Support**: Switch between voice and chat modes seamlessly
+- **Organized Codebase**: Well-structured React components, services, and utilities
 - **Advanced Voice Processing**: 
   - Noise cancellation (BVC)
   - Voice activity detection (Silero VAD)
@@ -164,6 +182,15 @@ The application will be available at `http://localhost:5173` (or the port shown 
 
 ## 🏗️ Architecture
 
+### Frontend Structure
+
+The frontend follows a modern, organized React structure:
+
+- **Components**: Organized by feature (`assistant/`, `pages/`) with legacy components preserved for reference
+- **Services**: Separated API calls and LiveKit utilities for better reusability
+- **Utils**: Centralized constants and configuration
+- **Styles**: Organized CSS files by component/page for maintainability
+
 ### Voice Assistant Flow
 
 1. User clicks voice assistant button in the frontend
@@ -220,7 +247,5 @@ The application will be available at `http://localhost:5173` (or the port shown 
 2. Follow the existing code structure
 3. Test voice and chat functionality before submitting changes
 
-## 📄 License
 
-[Add your license information here]
 
