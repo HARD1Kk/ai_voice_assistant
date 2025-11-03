@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import httpx
 
-load_dotenv("../../backend/livekit-voice-agent/.env.local")
+load_dotenv("../livekit-voice-agent/.env.local")
 
 app = FastAPI()
 

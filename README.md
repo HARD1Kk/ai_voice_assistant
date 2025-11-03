@@ -199,7 +199,7 @@ The application will be available at `http://localhost:5173` (or the port shown 
 - The voice agent uses multilingual turn detection for natural conversation flow
 - Noise cancellation (BVC) is enabled for better audio quality
 - Windows compatibility: Process timeout is set to 60 seconds (see `agent.py`)
-- Token server loads environment variables from `../../backend/livekit-voice-agent/.env.local`
+- Token server loads environment variables from `../livekit-voice-agent/.env.local`
 
 ## 🔒 Security Notes
 
